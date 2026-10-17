@@ -1,0 +1,187 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Outfit', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: #1e293b;
+    background-color: #f8fafc;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+/* 3D Illuminated Title Effect */
+.title-3d-illuminated {
+  text-shadow: 
+    0 1px 0 #ffffff,
+    0 2px 0 #38bdf8,
+    0 3px 0 #0284c7,
+    0 4px 0 #0369a1,
+    0 6px 1px rgba(0, 0, 0, 0.1),
+    0 0 20px rgba(56, 189, 248, 0.6),
+    0 0 40px rgba(13, 148, 136, 0.4);
+}
+
+.title-3d-gold {
+  text-shadow: 
+    0 1px 0 #ffffff,
+    0 2px 0 #fde047,
+    0 3px 0 #eab308,
+    0 4px 0 #ca8a04,
+    0 6px 1px rgba(0, 0, 0, 0.1),
+    0 0 25px rgba(250, 204, 21, 0.5);
+}
+
+/* Tactile 3D Buttons */
+.btn-3d-teal {
+  background: linear-gradient(180deg, #14b8a6 0%, #0d9488 100%);
+  border-bottom: 4px solid #0f766e;
+  transition: all 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-3d-teal:hover {
+  background: linear-gradient(180deg, #2dd4bf 0%, #0d9488 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -4px rgba(13, 148, 136, 0.45);
+}
+.btn-3d-teal:active {
+  transform: translateY(2px);
+  border-bottom-width: 1px;
+  box-shadow: none;
+}
+
+.btn-3d-sky {
+  background: linear-gradient(180deg, #38bdf8 0%, #0284c7 100%);
+  border-bottom: 4px solid #0369a1;
+  transition: all 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-3d-sky:hover {
+  background: linear-gradient(180deg, #60a5fa 0%, #0284c7 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -4px rgba(2, 132, 199, 0.45);
+}
+.btn-3d-sky:active {
+  transform: translateY(2px);
+  border-bottom-width: 1px;
+  box-shadow: none;
+}
+
+.btn-3d-coral {
+  background: linear-gradient(180deg, #fb7185 0%, #e11d48 100%);
+  border-bottom: 4px solid #9f1239;
+  transition: all 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-3d-coral:hover {
+  background: linear-gradient(180deg, #f43f5e 0%, #e11d48 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -4px rgba(225, 29, 72, 0.45);
+}
+.btn-3d-coral:active {
+  transform: translateY(2px);
+  border-bottom-width: 1px;
+  box-shadow: none;
+}
+
+.btn-3d-amber {
+  background: linear-gradient(180deg, #fbbf24 0%, #d97706 100%);
+  border-bottom: 4px solid #b45309;
+  transition: all 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-3d-amber:hover {
+  background: linear-gradient(180deg, #fcd34d 0%, #d97706 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -4px rgba(217, 119, 6, 0.45);
+}
+.btn-3d-amber:active {
+  transform: translateY(2px);
+  border-bottom-width: 1px;
+  box-shadow: none;
+}
+
+.btn-3d-purple {
+  background: linear-gradient(180deg, #a855f7 0%, #7e22ce 100%);
+  border-bottom: 4px solid #581c87;
+  transition: all 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-3d-purple:hover {
+  background: linear-gradient(180deg, #c084fc 0%, #7e22ce 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -4px rgba(126, 34, 206, 0.45);
+}
+.btn-3d-purple:active {
+  transform: translateY(2px);
+  border-bottom-width: 1px;
+  box-shadow: none;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.reduced-motion *,
+.reduced-motion *::before,
+.reduced-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Floating & Wiggle animations for mascot */
+@keyframes subtle-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes mascot-bounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  30% {
+    transform: translateY(-10px) scale(1.05);
+  }
+  60% {
+    transform: translateY(-4px) scale(0.98);
+  }
+}
+
+@keyframes mascot-shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20%, 60% {
+    transform: translateX(-6px) rotate(-3deg);
+  }
+  40%, 80% {
+    transform: translateX(6px) rotate(3deg);
+  }
+}
+
+.animate-subtle-float {
+  animation: subtle-float 3.5s ease-in-out infinite;
+}
+
+.animate-mascot-happy {
+  animation: mascot-bounce 0.8s ease-in-out;
+}
+
+.animate-mascot-confused {
+  animation: mascot-shake 0.6s ease-in-out;
+}
